@@ -1,3 +1,5 @@
-# map_app
+# my_board_app
 
-A new Flutter project.
+flutter勉強用
+フロントエンドはflutterで掲示板アプリ？作成
+ラズパイ5にデプロイ予定
