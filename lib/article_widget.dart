@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:map_app/models/article_model.dart';
 
-class Article extends StatelessWidget {
-  const Article({super.key});
+class ArticleWidget extends StatelessWidget {
+  const ArticleWidget({super.key, required this.article});
+
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
@@ -10,10 +13,11 @@ class Article extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
+            ListTile(
               leading: Icon(Icons.mail),
-              title: Text('タイトル'),
-              subtitle: Text('ダミー投稿'),
+              title: Text(article.title),
+              subtitle: Text(article.text),
+              trailing: Text(article.date.toString()),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
