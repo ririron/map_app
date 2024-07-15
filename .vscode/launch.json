@@ -5,21 +5,34 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "map_app",
+			"name": "my_board_app",
+			"cwd": "my_board_app",
 			"request": "launch",
 			"type": "dart"
 		},
 		{
-			"name": "map_app (profile mode)",
+			"name": "my_board_app (profile mode)",
+			"cwd": "my_board_app",
 			"request": "launch",
 			"type": "dart",
 			"flutterMode": "profile"
 		},
 		{
-			"name": "map_app (release mode)",
+			"name": "my_board_app (release mode)",
+			"cwd": "my_board_app",
 			"request": "launch",
 			"type": "dart",
 			"flutterMode": "release"
-		}
+		},
+		{
+            "name": "my_board_app(web)",
+            "type": "dart",
+            "request": "launch",
+            "program": "my_board_app/lib/main.dart",
+            "args": [
+                "-d",
+                "web-server"
+            ]
+        }
 	]
 }
