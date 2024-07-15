@@ -14,7 +14,7 @@ class ArticleWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             ListTile(
-              leading: Icon(Icons.mail),
+              leading: const Icon(Icons.mail),
               title: Text(article.title),
               subtitle: Text(article.text),
               trailing: Text(article.date.toString()),

@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:map_app/models/article_model.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:map_app/timeline.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:map_app/timeline_notifier.dart';
 
 /// 投稿フォーム
-class PostForm extends ConsumerWidget {
+class PostForm extends HookConsumerWidget {
   const PostForm({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final titleCtrl = useTextEditingController();
+    final mainCtrl = useTextEditingController();
+
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
         child: Card(
             child: Column(
           children: [
-            const TextField(
+            TextField(
               maxLines: 1,
-              decoration: InputDecoration(hintText: "title"),
+              decoration: const InputDecoration(hintText: "title"),
+              controller: titleCtrl,
             ),
             Stack(children: [
-              const TextField(
+              TextField(
                 maxLines: 5,
-                decoration: InputDecoration(hintText: "main"),
+                decoration: const InputDecoration(hintText: "main"),
+                controller: mainCtrl,
               ),
               const SizedBox(
                 height: 32,
@@ -34,8 +39,8 @@ class PostForm extends ConsumerWidget {
                     onPressed: () {
                       final newArticle = Article(
                           date: DateTime.now(),
-                          title: "hoge",
-                          text: "fuga",
+                          title: titleCtrl.text,
+                          text: mainCtrl.text,
                           goodNum: 0,
                           badNum: 0);
                       // バックエンドにPOSTする
