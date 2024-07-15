@@ -5,9 +5,14 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "map_app",
+			"name": "my_board_app(web)",
+			"type": "dart",
 			"request": "launch",
-			"type": "dart"
+			"program": "lib/main.dart",
+			"args": [
+				"-d",
+				"web-server"
+			]
 		},
 		{
 			"name": "map_app (profile mode)",
