@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:map_app/components/form.dart';
 import 'package:map_app/components/graph.dart';
-import 'package:map_app/post_form.dart';
-import 'package:map_app/timeline_widget.dart';
 
 void main() {
   runApp(const ProviderScope(child: MainApp()));
 }
 
-class MainApp extends ConsumerWidget {
+class MainApp extends HookConsumerWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final select = useState<int>(0);
+
     return MaterialApp(
       home: Scaffold(
         body: Column(
@@ -26,17 +28,24 @@ class MainApp extends ConsumerWidget {
                   child: ExpansionTile(
                     title: const Text('ここで選択'),
                     children: <Widget>[
-                      ListTile(
+                      RadioListTile(
                         // TODO:radiolistに変更
                         title: TextButton(
                           onPressed: () {},
                           child: const Text('ここに記録している対象を表示'),
                         ),
+                        value: 0,
+                        groupValue: select.value,
+                        onChanged: (int? value) {
+                          if (value != null) {
+                            select.value = value;
+                          }
+                        },
                       ),
                     ],
                   ),
                 ),
-                TextButton(onPressed: () {}, child: const Text("記録")),
+                const InputForm(),
               ],
             ),
             const SizedBox(
