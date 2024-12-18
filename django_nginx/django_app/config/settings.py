@@ -123,4 +123,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_X_FORWARDED_HOST = True
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost"] # localhostではなく、ipアドレスに置き換え
