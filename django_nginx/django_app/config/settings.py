@@ -123,4 +123,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_X_FORWARDED_HOST = True
+# nginxの設定で/apiというサブパスで動かしたい
+# https://docs.djangoproject.com/ja/5.1/ref/settings/#force-script-name
+FORCE_SCRIPT_NAME = '/api'
 ALLOWED_HOSTS = ["localhost"] # localhostではなく、ipアドレスに置き換え
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"] #nginxのみを許可
