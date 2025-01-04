@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+	# カスタムユーザー
+	'app_user.apps.AppUserConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +127,9 @@ FORCE_SCRIPT_NAME = '/api'
 STATIC_URL = '/static/'
 # nginx経由でcssを読み込む
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# カスタムユーザー設定
+AUTH_USER_MODEL = 'app_user.AppUser'
 
 
 # Default primary key field type

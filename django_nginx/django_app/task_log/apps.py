@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ArticleConfig(AppConfig):
+class TaskLogConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'article'
+    name = 'task_log'
