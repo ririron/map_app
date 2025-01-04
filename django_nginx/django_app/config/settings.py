@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-f896u)jj#7hd88p3**xpv-t3^^=yhyxj(*-it9x5kny$4gwx4w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# localhostではなく、ipアドレスに置き換え
+# host.docker.internal:37564はnginx経由でcssを読み込ませるため
+ALLOWED_HOSTS = ["localhost", "host.docker.internal"] 
 
 
 # Application definition
@@ -113,18 +115,21 @@ USE_I18N = True
 USE_TZ = True
 
 
+# nginxの設定で/apiというサブパスで動かしたい
+# https://docs.djangoproject.com/ja/5.1/ref/settings/#force-script-name
+FORCE_SCRIPT_NAME = '/api'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# nginx経由でcssを読み込む
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USE_X_FORWARDED_HOST = True
-# nginxの設定で/apiというサブパスで動かしたい
-# https://docs.djangoproject.com/ja/5.1/ref/settings/#force-script-name
-FORCE_SCRIPT_NAME = '/api'
-ALLOWED_HOSTS = ["localhost"] # localhostではなく、ipアドレスに置き換え
 CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"] #nginxのみを許可
