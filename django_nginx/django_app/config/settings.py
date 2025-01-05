@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
 	# カスタムユーザー
 	'app_user.apps.AppUserConfig',
+    # 本体
+    'task_log.apps.TaskLogConfig',
 ]
 
 MIDDLEWARE = [
