@@ -6,4 +6,4 @@ from django.contrib.auth.models import AbstractUser
 
 # アプリ用カスタムユーザー
 class AppUser(AbstractUser):
-	job = models.CharField(max_length=10)
+	job = models.CharField(max_length=10, blank=True)

@@ -201,3 +201,385 @@ abstract class _Record implements Record {
   _$$RecordImplCopyWith<_$RecordImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+UserTask _$UserTaskFromJson(Map<String, dynamic> json) {
+  return _UserTask.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserTask {
+  int get taskOwner => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get sp => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserTaskCopyWith<UserTask> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserTaskCopyWith<$Res> {
+  factory $UserTaskCopyWith(UserTask value, $Res Function(UserTask) then) =
+      _$UserTaskCopyWithImpl<$Res, UserTask>;
+  @useResult
+  $Res call({int taskOwner, String name, int sp});
+}
+
+/// @nodoc
+class _$UserTaskCopyWithImpl<$Res, $Val extends UserTask>
+    implements $UserTaskCopyWith<$Res> {
+  _$UserTaskCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? taskOwner = null,
+    Object? name = null,
+    Object? sp = null,
+  }) {
+    return _then(_value.copyWith(
+      taskOwner: null == taskOwner
+          ? _value.taskOwner
+          : taskOwner // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      sp: null == sp
+          ? _value.sp
+          : sp // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UserTaskImplCopyWith<$Res>
+    implements $UserTaskCopyWith<$Res> {
+  factory _$$UserTaskImplCopyWith(
+          _$UserTaskImpl value, $Res Function(_$UserTaskImpl) then) =
+      __$$UserTaskImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int taskOwner, String name, int sp});
+}
+
+/// @nodoc
+class __$$UserTaskImplCopyWithImpl<$Res>
+    extends _$UserTaskCopyWithImpl<$Res, _$UserTaskImpl>
+    implements _$$UserTaskImplCopyWith<$Res> {
+  __$$UserTaskImplCopyWithImpl(
+      _$UserTaskImpl _value, $Res Function(_$UserTaskImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? taskOwner = null,
+    Object? name = null,
+    Object? sp = null,
+  }) {
+    return _then(_$UserTaskImpl(
+      taskOwner: null == taskOwner
+          ? _value.taskOwner
+          : taskOwner // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      sp: null == sp
+          ? _value.sp
+          : sp // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserTaskImpl implements _UserTask {
+  const _$UserTaskImpl(
+      {required this.taskOwner, required this.name, required this.sp});
+
+  factory _$UserTaskImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserTaskImplFromJson(json);
+
+  @override
+  final int taskOwner;
+  @override
+  final String name;
+  @override
+  final int sp;
+
+  @override
+  String toString() {
+    return 'UserTask(taskOwner: $taskOwner, name: $name, sp: $sp)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserTaskImpl &&
+            (identical(other.taskOwner, taskOwner) ||
+                other.taskOwner == taskOwner) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.sp, sp) || other.sp == sp));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, taskOwner, name, sp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserTaskImplCopyWith<_$UserTaskImpl> get copyWith =>
+      __$$UserTaskImplCopyWithImpl<_$UserTaskImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserTaskImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UserTask implements UserTask {
+  const factory _UserTask(
+      {required final int taskOwner,
+      required final String name,
+      required final int sp}) = _$UserTaskImpl;
+
+  factory _UserTask.fromJson(Map<String, dynamic> json) =
+      _$UserTaskImpl.fromJson;
+
+  @override
+  int get taskOwner;
+  @override
+  String get name;
+  @override
+  int get sp;
+  @override
+  @JsonKey(ignore: true)
+  _$$UserTaskImplCopyWith<_$UserTaskImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TaskLog _$TaskLogFromJson(Map<String, dynamic> json) {
+  return _TaskLog.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TaskLog {
+  int get taskOwner => throw _privateConstructorUsedError;
+  int get taskId => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get remain => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TaskLogCopyWith<TaskLog> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TaskLogCopyWith<$Res> {
+  factory $TaskLogCopyWith(TaskLog value, $Res Function(TaskLog) then) =
+      _$TaskLogCopyWithImpl<$Res, TaskLog>;
+  @useResult
+  $Res call(
+      {int taskOwner, int taskId, DateTime date, String name, int remain});
+}
+
+/// @nodoc
+class _$TaskLogCopyWithImpl<$Res, $Val extends TaskLog>
+    implements $TaskLogCopyWith<$Res> {
+  _$TaskLogCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? taskOwner = null,
+    Object? taskId = null,
+    Object? date = null,
+    Object? name = null,
+    Object? remain = null,
+  }) {
+    return _then(_value.copyWith(
+      taskOwner: null == taskOwner
+          ? _value.taskOwner
+          : taskOwner // ignore: cast_nullable_to_non_nullable
+              as int,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as int,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      remain: null == remain
+          ? _value.remain
+          : remain // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TaskLogImplCopyWith<$Res> implements $TaskLogCopyWith<$Res> {
+  factory _$$TaskLogImplCopyWith(
+          _$TaskLogImpl value, $Res Function(_$TaskLogImpl) then) =
+      __$$TaskLogImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int taskOwner, int taskId, DateTime date, String name, int remain});
+}
+
+/// @nodoc
+class __$$TaskLogImplCopyWithImpl<$Res>
+    extends _$TaskLogCopyWithImpl<$Res, _$TaskLogImpl>
+    implements _$$TaskLogImplCopyWith<$Res> {
+  __$$TaskLogImplCopyWithImpl(
+      _$TaskLogImpl _value, $Res Function(_$TaskLogImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? taskOwner = null,
+    Object? taskId = null,
+    Object? date = null,
+    Object? name = null,
+    Object? remain = null,
+  }) {
+    return _then(_$TaskLogImpl(
+      taskOwner: null == taskOwner
+          ? _value.taskOwner
+          : taskOwner // ignore: cast_nullable_to_non_nullable
+              as int,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as int,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      remain: null == remain
+          ? _value.remain
+          : remain // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TaskLogImpl implements _TaskLog {
+  const _$TaskLogImpl(
+      {required this.taskOwner,
+      required this.taskId,
+      required this.date,
+      required this.name,
+      required this.remain});
+
+  factory _$TaskLogImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TaskLogImplFromJson(json);
+
+  @override
+  final int taskOwner;
+  @override
+  final int taskId;
+  @override
+  final DateTime date;
+  @override
+  final String name;
+  @override
+  final int remain;
+
+  @override
+  String toString() {
+    return 'TaskLog(taskOwner: $taskOwner, taskId: $taskId, date: $date, name: $name, remain: $remain)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskLogImpl &&
+            (identical(other.taskOwner, taskOwner) ||
+                other.taskOwner == taskOwner) &&
+            (identical(other.taskId, taskId) || other.taskId == taskId) &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.remain, remain) || other.remain == remain));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, taskOwner, taskId, date, name, remain);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskLogImplCopyWith<_$TaskLogImpl> get copyWith =>
+      __$$TaskLogImplCopyWithImpl<_$TaskLogImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TaskLogImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TaskLog implements TaskLog {
+  const factory _TaskLog(
+      {required final int taskOwner,
+      required final int taskId,
+      required final DateTime date,
+      required final String name,
+      required final int remain}) = _$TaskLogImpl;
+
+  factory _TaskLog.fromJson(Map<String, dynamic> json) = _$TaskLogImpl.fromJson;
+
+  @override
+  int get taskOwner;
+  @override
+  int get taskId;
+  @override
+  DateTime get date;
+  @override
+  String get name;
+  @override
+  int get remain;
+  @override
+  @JsonKey(ignore: true)
+  _$$TaskLogImplCopyWith<_$TaskLogImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
