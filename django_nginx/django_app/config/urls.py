@@ -30,4 +30,6 @@ urlpatterns = [
     path('auth/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     # ユーザー登録
     path('app_user/', include('app_user.urls')),
+    # ログ取得
+    path('task_log/', include('task_log.urls')),
 ]
