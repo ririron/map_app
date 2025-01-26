@@ -3,7 +3,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'client.g.dart';
 
-@RestApi(baseUrl: "https://example.com/api") // ベースURL
+@RestApi(baseUrl: "https://example.com/api")
 abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
